@@ -14,5 +14,24 @@
 그리디 알고리즘을 사용한다는 것은 지금 당장 눈 앞에 있는 마시멜로를 먹는 것이다.
 하지만 이 방법을 사용하는 것은 "기다렸다가 2개를 먹는다"라는 최적해를 보장해주지 못한다.
 
+문제 : https://www.zerocho.com/category/Algorithm/post/584ba5c9580277001862f188
+
 """
 
+activity = [[1,1,3], [2,2,5], [3,4,7], [4,1,8], [5,5,9], [6,8,10], [7,9,11], [8,11,14], [9,13,16]]
+
+def activitySelection(act):
+    result = []
+
+    sortedAct = sorted(act, key=lambda x: x[2])
+
+    last = 0    for i in sortedAct:
+        if last < i[1]:
+            result.append(i)
+            last = i[2]
+
+    print("선택된 Activity: ", result)
+    result = list(map(lambda x: x[0], result))
+    return result
+
+print("선택된 Activity Number: ", activitySelection(activity))
