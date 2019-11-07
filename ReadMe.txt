@@ -2,7 +2,7 @@
 
 Big O Complecxity
 //복잡도 순
-
+ 
 O(N!)     : factorial 
 // travelling salesman problem with brute force search
 O(2^N)    : exponential
